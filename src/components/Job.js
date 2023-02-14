@@ -12,14 +12,19 @@ const Job = ({ job }) => {
                     <Featured featuredStatus={job.featured} />
                 </div>
                 <div className="position">
-
+                    <h2>{job.position}</h2>
                 </div>
                 <div className="information">
-
+                    <span>{job.postedAt}</span>
+                    <span>&#183;</span>
+                    <span>{job.contract}</span>
+                    <span>&#183;</span>
+                    <span>{job.location}</span>
                 </div>
             </section>
+            <hr />
             <section className="tags">
-
+                
             </section>
         </article>
     );
