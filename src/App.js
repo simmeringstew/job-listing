@@ -2,7 +2,9 @@ import './App.css';
 
 const App = () => {
   return(
-    <h1>Job Listing</h1>
+    <div>
+      <div className="top-design" aria-hidden="true"></div>
+    </div>
   );
 }
 

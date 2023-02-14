@@ -1,0 +1,13 @@
+.top-design {
+    min-height: 8rem;
+    background-image: url("./styles/images/bg-header-mobile.svg");
+    background-color: var(--clr-teal);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (min-width: 992px) {
+    .top-design {
+        background-image: url("./styles/images/bg-header-desktop.svg");
+    }
+}
