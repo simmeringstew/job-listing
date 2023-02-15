@@ -18,6 +18,9 @@ const App = () => {
   }
   const [languages, setLanguages] = useState([]);
   const addLanguage = (selection) => {
+    if (languages.includes(selection)) {
+      return;
+    }
     setLanguages(languages.concat(selection));
   }
 
