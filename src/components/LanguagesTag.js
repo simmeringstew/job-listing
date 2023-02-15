@@ -5,7 +5,7 @@ const LanguagesTag = ({ languages, addLanguage }) => {
         return;
     }
     return(
-        <span>
+        <>
             {languages.map(language =>
             <LanguageTag 
                 key={languages.indexOf(language)}
@@ -13,7 +13,7 @@ const LanguagesTag = ({ languages, addLanguage }) => {
                 addLanguage={addLanguage}
             />
             )}
-        </span>
+        </>
     );
 }
 

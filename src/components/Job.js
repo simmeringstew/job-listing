@@ -4,6 +4,7 @@ import RoleTag from "./RoleTag";
 import LevelTag from "./LevelTag";
 import LanguagesTag from "./LanguagesTag";
 import ToolsTag from "./ToolsTag";
+import "../styles/Job.css";
 
 const Job = ({ job, changeRole, changeLevel, addLanguage, addTool }) => {
     return(

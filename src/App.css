@@ -6,6 +6,13 @@
     background-size: cover;
 }
 
+main {
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
 @media screen and (min-width: 992px) {
     .top-design {
         background-image: url("./styles/images/bg-header-desktop.svg");

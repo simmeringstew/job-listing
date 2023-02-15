@@ -5,7 +5,7 @@ const ToolTags = ({ tools, addTool }) => {
         return;
     }
     return(
-        <span>
+        <>
             {tools.map(tool =>
             <ToolTag 
                 key={tools.indexOf(tool)}
@@ -13,7 +13,7 @@ const ToolTags = ({ tools, addTool }) => {
                 addTool={addTool}
             />
             )}
-        </span>
+        </>
     );
 }
 
