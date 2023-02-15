@@ -25,6 +25,12 @@ const App = () => {
   }
 
   const [tools, setTools] = useState([]);
+  const addTool = (selection) => {
+    if (tools.includes(selection)) {
+      return;
+    }
+    setTools(tools.concat(selection));
+  }
 
   useEffect(() => {
     let copy = [...data];
@@ -39,8 +45,13 @@ const App = () => {
         copy = copy.filter(job => job.languages.includes(languages[i]));
       }
     }
+    if (tools.length !== 0) {
+      for (let i = 0; i < tools.length; i++) {
+        copy = copy.filter(job => job.tools.includes(tools[i]))
+      }
+    }
     setJobs(copy);
-  }, [role, level, languages]);
+  }, [role, level, languages, tools]);
 
   return(
     <div>
@@ -56,6 +67,7 @@ const App = () => {
         changeRole={changeRole}
         changeLevel={changeLevel}
         addLanguage={addLanguage}
+        addTool={addTool}
         />
         )}
       </main>
