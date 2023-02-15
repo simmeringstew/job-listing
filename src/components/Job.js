@@ -2,8 +2,9 @@ import New from "./New";
 import Featured from "./Featured";
 import RoleTag from "./RoleTag";
 import LevelTag from "./LevelTag";
+import LanguagesTag from "./LanguagesTag";
 
-const Job = ({ job, changeRole, changeLevel }) => {
+const Job = ({ job, changeRole, changeLevel, addLanguage }) => {
     return(
         <article>
             <img src={job.logo} alt={job.company} />
@@ -33,6 +34,10 @@ const Job = ({ job, changeRole, changeLevel }) => {
                 <LevelTag 
                     level={job.level} 
                     changeLevel={changeLevel}
+                />
+                <LanguagesTag
+                    languages={job.languages}
+                    addLanguage={addLanguage}
                 />
             </section>
         </article>
