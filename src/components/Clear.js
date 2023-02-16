@@ -1,6 +1,11 @@
-const Clear = () => {
+const Clear = ({ reset }) => {
+
+    const handleClick = () => {
+        reset();
+    }
+
     return(
-        <button type="button" name="clear">Clear</button>
+        <button type="button" name="clear" onClick={handleClick}>Clear</button>
     );
 }
 

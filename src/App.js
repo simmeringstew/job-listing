@@ -44,6 +44,13 @@ const App = () => {
     setTools(tools.filter(tool => tool !== selection));
   }
 
+  const reset = () => {
+    setRole("");
+    setLevel("");
+    setLanguages([]);
+    setTools([]);
+  }
+
   useEffect(() => {
     let copy = [...data];
     if (role !== "") {
@@ -77,7 +84,7 @@ const App = () => {
             <Tools tools={tools} removeTool={removeTool} />
           </div>
           <div className="clear">
-            <Clear />
+            <Clear reset={reset} />
           </div>
         </div>
         {jobs.map(job =>
