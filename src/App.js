@@ -4,6 +4,7 @@ import Job from "./components/Job";
 import Role from "./components/Role";
 import Level from "./components/Level";
 import Languages from "./components/Languages";
+import Tools from "./components/Tools";
 import Clear from "./components/Clear";
 import './App.css';
 
@@ -39,6 +40,9 @@ const App = () => {
     }
     setTools(tools.concat(selection));
   }
+  const removeTool = (selection) => {
+    setTools(tools.filter(tool => tool !== selection));
+  }
 
   useEffect(() => {
     let copy = [...data];
@@ -70,6 +74,7 @@ const App = () => {
             <Role role={role} changeRole={changeRole} />
             <Level level={level} changeLevel={changeLevel} />
             <Languages languages={languages} removeLanguage={removeLanguage} />
+            <Tools tools={tools} removeTool={removeTool} />
           </div>
           <div className="clear">
             <Clear />
