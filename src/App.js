@@ -3,7 +3,7 @@ import data from "./data.json";
 import Job from "./components/Job";
 import Role from "./components/Role";
 import Level from "./components/Level";
-
+import Languages from "./components/Languages";
 import Clear from "./components/Clear";
 import './App.css';
 
@@ -20,12 +20,16 @@ const App = () => {
   const changeLevel = (selection) => {
     setLevel(selection);
   }
+
   const [languages, setLanguages] = useState([]);
   const addLanguage = (selection) => {
     if (languages.includes(selection)) {
       return;
     }
     setLanguages(languages.concat(selection));
+  }
+  const removeLanguage = (selection) => {
+    setLanguages(languages.filter(language => language !== selection));
   }
 
   const [tools, setTools] = useState([]);
@@ -65,6 +69,7 @@ const App = () => {
           <div className="filters">
             <Role role={role} changeRole={changeRole} />
             <Level level={level} changeLevel={changeLevel} />
+            <Languages languages={languages} removeLanguage={removeLanguage} />
           </div>
           <div className="clear">
             <Clear />
