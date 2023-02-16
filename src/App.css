@@ -13,21 +13,6 @@ main {
     gap: 3rem;
 }
 
-.filter-list {
-    display: none;
-}
-
-.filter-list:has(button[name=remove]) {
-    display: block;
-    background-color: var(--clr-card);
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    padding: 1rem;
-    border-radius: 4px;
-    margin-top: -5rem;
-    display: grid;
-    grid-template-areas: "filters filters clear";
-}
-
 .filters {
     grid-area: filters;
     display: grid;
@@ -86,5 +71,36 @@ button[name=close] > svg {
 
     .filters {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@supports (selector(:has(*))) {
+    .filter-list {
+        display: none;
+    }
+    
+    .filter-list:has(button[name=remove]) {
+        display: block;
+        background-color: var(--clr-card);
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        padding: 1rem;
+        border-radius: 4px;
+        margin-top: -5rem;
+        display: grid;
+        grid-template-areas: "filters filters clear";
+    }
+}
+
+@supports not (selector(:has(*))) {
+    .filter-list {
+        display: block;
+        background-color: var(--clr-card);
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        padding: 1rem;
+        border-radius: 4px;
+        margin-top: -5rem;
+        display: grid;
+        grid-template-areas: "filters filters clear";
     }
 }
