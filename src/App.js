@@ -57,10 +57,10 @@ const App = () => {
   return(
     <div>
       <div className="top-design" aria-hidden="true"></div>
-      <div className="filter-list">
-        <Role role={role} changeRole={changeRole} />
-      </div>
       <main className="container px-5">
+        <div className="filter-list">
+          <Role role={role} changeRole={changeRole} />
+        </div>
         {jobs.map(job =>
         <Job 
         key={job.id} 
