@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import data from "./data.json";
 import Job from "./components/Job";
+import Role from "./components/Role";
 import './App.css';
 
 const App = () => {
@@ -57,7 +58,7 @@ const App = () => {
     <div>
       <div className="top-design" aria-hidden="true"></div>
       <div className="filter-list">
-
+        <Role role={role} changeRole={changeRole} />
       </div>
       <main className="container px-5">
         {jobs.map(job =>
