@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import data from "./data.json";
 import Job from "./components/Job";
 import Role from "./components/Role";
+import Level from "./components/Level";
+
+import Clear from "./components/Clear";
 import './App.css';
 
 const App = () => {
@@ -59,7 +62,13 @@ const App = () => {
       <div className="top-design" aria-hidden="true"></div>
       <main className="container px-5">
         <div className="filter-list">
-          <Role role={role} changeRole={changeRole} />
+          <div className="filters">
+            <Role role={role} changeRole={changeRole} />
+            <Level level={level} changeLevel={changeLevel} />
+          </div>
+          <div className="clear">
+            <Clear />
+          </div>
         </div>
         {jobs.map(job =>
         <Job 
