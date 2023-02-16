@@ -32,11 +32,20 @@ main {
     grid-area: filters;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 .clear {
     grid-area: clear;
     align-self: center;
+}
+
+.clear > button {
+    border: transparent;
+    background-color: transparent;
+    font-weight: 700;
+    color: var(--clr-gray);
+    cursor: pointer;
 }
 
 .close-buttons {
@@ -72,5 +81,9 @@ button[name=close] > svg {
 @media screen and (min-width: 992px) {
     .top-design {
         background-image: url("./styles/images/bg-header-desktop.svg");
+    }
+
+    .filters {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
